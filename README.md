@@ -64,3 +64,17 @@ Successfully reverted API Calls
   - In DllMain.cpp find line 23 and uncomment it: #define DETOUR_SESSION_ID
   - Build dll, patch application and try again.
   
+# Security
+
+You should understand that this solution reduces a bit the security of the USB keys and violates Microsoft
+rules about USB keys in RDP session.
+
+I do not provide any binary files, you must to compile everything yourself.
+The provided code is short enough to be inspected and doesn't contain any undeclared functionality.
+Detours is a well-known library from Microsoft, so it's rather safe to use it.
+
+In common - it's a workaround, use it on you own risk.
+I use in in my own work, I saw many requests for that, so I decided to share it.
+
+Cheers,
+Nikolai
