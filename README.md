@@ -54,13 +54,13 @@ The idea is taken here: https://stackoverflow.com/questions/15906740/how-to-use-
   - Try to patch application again, selecting #0, #1 or #2 in the Function: field.
 * If application doesn't see the USB key in RDP session:
   - Run the DebugView from Sysinternals: https://learn.microsoft.com/en-us/sysinternals/downloads/debugview 
-  - Run the application. In the DebugView you should see the lines:
-DllMain Entry 00000001 
-Starting Detour API Calls 
-Successfully Detoured API Calls  
-DllMain Entry 00000000 
-Successfully reverted API Calls  
-  - If you see "Successfully Detoured API Calls", but the app doesn't see the key(s) - try to enable the sessionID detour:
+  - Run the application. In the DebugView you should see the lines:\
+DllMain Entry 00000001\
+Starting Detour API Calls\
+Successfully Detoured API Calls\
+DllMain Entry 00000000\
+Successfully reverted API Calls
+* If you see "Successfully Detoured API Calls", but the app doesn't see the key(s) - try to enable the sessionID detour:
   - In DllMain.cpp find line 23 and uncomment it: #define DETOUR_SESSION_ID
   - Build dll, patch application and try again.
   
@@ -74,7 +74,7 @@ The provided code is short enough to be inspected and doesn't contain any undecl
 Detours is a well-known library from Microsoft, so it's rather safe to use it.
 
 In common - it's a workaround, use it on you own risk.
-I use in in my own work, I saw many requests for that, so I decided to share it.
+I use it in my own work, I saw many requests for that, so I decided to share it.
 
 Cheers,
 Nikolai
